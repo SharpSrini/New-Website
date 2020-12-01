@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<br><br><br>
+
+<h4>{{object.post}}</h4><br>
+<br><br>
+Posted by <p>{{object.user}}</p> on {{object.timestamp}}<br>
+<br><hr>
+
+<a class="btn btn-primary btn-sm" href="{% url 'localmedia:comment' object.id %}" role="button" style="font: bold 20px Times New Roman;">Add a Comment</a>
+</br>
+<br>
+<img src="{{localmedia.imageform.url}}" alt="Smiley face" width="250" height="250">
+    <br />
+<br><br>
+{% for i in post.comment.all %}
+
+<b>{{i.comment}}</b><br>
+<b>{{i.timestamp}}</b><br>
+Comment posted by {{i.user}}
+
+<hr>
+
+{% empty %}
+No Comments
+{% endfor %}
+
+{% endblock %}

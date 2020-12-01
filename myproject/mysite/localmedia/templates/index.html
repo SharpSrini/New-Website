@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<br><br>
+{% for i in q %}
+<b>{{i.post}}</b><br><br>
+<p>posted by {{i.user}} at {{i.timestamp}}</p>
+<a href="{% url 'localmedia:detail' i.id %}">Add a comment to this post</a>
+<br><br><hr>
+{% endfor %}
+
+{% endblock %}

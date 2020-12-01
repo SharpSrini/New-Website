@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="image" src="https://previews.123rf.com/images/faysalfarhan/faysalfarhan1711/faysalfarhan171142593/89590336-comment-isolated-on-prime-red-banner-button-abstract-illustration.jpg" alt="Submit" width="80" height="80" value="Submit">
+</form>
+{% endblock %}
